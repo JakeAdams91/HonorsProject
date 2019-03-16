@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "canvas-spinner": "^0.1.8",
     "vue": "^2.5.22",
+    "vuetify": "^1.5.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -19,6 +21,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "material-design-icons-iconfont": "^4.0.5",
     "vue-template-compiler": "^2.5.21"
   }
 }
