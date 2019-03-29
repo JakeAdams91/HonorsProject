@@ -1,19 +1,6 @@
 <template>
   <v-container grid-list-md fluid class="ma-0 pa-0">
     <v-layout row wrap>
-      <!-- 
-      <v-sparkline
-        :labels="labels"
-        :value="angularValue"
-        color="primary"
-        line-width="2"
-        ></v-sparkline>
-      <v-sparkline
-        :labels="labels"
-        :value="vueValue"
-        color="green"
-        line-width="2"
-        ></v-sparkline> -->
       <v-stepper v-model="el">
         <v-stepper-header>
           <v-stepper-step :complete="el > 1" step="1">
@@ -30,9 +17,9 @@
         </v-stepper-header>
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-card height="350" flat>
+            <v-card flat>
               <v-layout row>
-                <v-flex xs1>
+                <v-flex xs2 sm2 md1>
                   <v-img height="40" width="45" :src="require('../assets/react.svg')"></v-img>
                 </v-flex>
                 <v-flex class="mt-3">
@@ -42,10 +29,11 @@
                 </v-flex>
               </v-layout>
               <v-divider />
-              <v-card-text>
+              <v-card-text class="mb-3">
                 React is by and far the most popular JS Framework out, according to data gathered from StateofJs.com over time
                 react has had great growth from developers whom has used and are willing to use it again each year from 2016-2018
                 <v-sparkline
+                class="mt-5"
                   height="80"
                   show-labels
                   type="bar"
@@ -53,7 +41,7 @@
                   :labels="labels"
                   :value="reactValue"
                   color="#61dafb"
-                  line-width="10"
+                  line-width="25"
                 >
                 </v-sparkline>
               </v-card-text>
@@ -67,9 +55,9 @@
           </v-stepper-content>
           
           <v-stepper-content step="2">
-            <v-card height="350" flat>
+            <v-card flat>
               <v-layout row>
-                <v-flex xs3 class="angular">
+                <v-flex xs12 sm3 class="angular">
                   <v-img height="45" width="175" :src="require('../assets/angular.svg')"></v-img>
                 </v-flex>
               </v-layout>
@@ -86,7 +74,7 @@
                   :labels="labels"
                   :value="angularValue"
                   color="#e53935"
-                  line-width="10"
+                  line-width="25"
                 >
                 </v-sparkline>
               </v-card-text>
@@ -100,9 +88,9 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-card height="350" flat>
+            <v-card flat>
               <v-layout row>
-                <v-flex xs1>
+                <v-flex xs2 sm2 md1>
                   <v-img height="40" width="40" :src="require('../assets/vue.png')"></v-img>
                 </v-flex>
                 <v-flex class="mt-3">
@@ -124,7 +112,7 @@
                   :labels="labels"
                   :value="vueValue"
                   color="#4caf50"
-                  line-width="10"
+                  line-width="25"
                 ></v-sparkline>
               </v-card-text>
             </v-card>

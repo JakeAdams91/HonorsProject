@@ -2,7 +2,8 @@
   <v-container grid-list-md>
     <v-layout row wrap>
       <v-flex d-flex xs12>
-        <v-card flat>
+        <v-card elevation="1"
+        >
           <v-card-title class="title">
             What are Javascript Frameworks?
           </v-card-title>
@@ -17,10 +18,8 @@
           </v-card-text>
         </v-card>
       </v-flex>
-      <!-- experimental -->
-      <!-- <v-layout row wrap> -->
-      <v-flex d-flex xs3>
-            <v-card flat>
+      <v-flex d-flex xs12 sm3>
+            <v-card elevation="1">
               <v-card-title class="title">
                 Javascript Frameworks 
               </v-card-title>
@@ -34,15 +33,12 @@
                 Ember.js <v-spacer />
                 Polymer.js <v-spacer />
               </v-card-text>
-              <!-- <v-parallax height="700" :src="require('../assets/sideII.jpg')"></v-parallax> -->
             </v-card>
           </v-flex>
           <v-flex xs9>
-            <stepper-chart />
+            <stepper-chart v-if="this.$vuetify.breakpoint.smAndUp"/>
           </v-flex>
-      <!-- </v-layout> -->
-      <!-- experimental -->
-
+          <stepper-chart v-if="this.$vuetify.breakpoint.xsOnly"/>
     </v-layout>
   </v-container>
 </template>
