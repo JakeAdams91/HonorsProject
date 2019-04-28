@@ -2,13 +2,12 @@
   <v-container grid-list-md>
     <v-layout row wrap>
       <v-flex d-flex xs12>
-        <v-card elevation="1"
-        >
-          <v-card-title class="title">
+        <v-card class="bgc">
+          <v-card-title class="display-1">
             What are Javascript Frameworks?
           </v-card-title>
           <v-divider />
-          <v-card-text>
+          <v-card-text class="subheading">
             Though the various Javascript Frameworks abilities and features vary greatly, one thing is still true of them.
             A Framework is just a compilation of various pre-built features to speed up the development time and quality of websites.
             Prior to good Frameworks a developer had to code everything from complete scratch (unless he/she kept a repo of pre-coded items such as a nav-bar)
@@ -19,12 +18,12 @@
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm3>
-            <v-card elevation="1">
-              <v-card-title class="title">
+            <v-card class="bgc">
+              <v-card-title class="headline">
                 Javascript Frameworks 
               </v-card-title>
               <v-divider />
-              <v-card-text>
+              <v-card-text class="subheading">
                 A few of the many JS Frameworks<v-spacer />
                 React.js <v-spacer />
                 Vue.js <v-spacer />

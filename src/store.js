@@ -5,7 +5,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     // NavigationDisplay: false,
-    path: 'Home',
+    path: 'Home'
   },
   getters: {
     // getNavigationDisplay (state) {
