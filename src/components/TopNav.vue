@@ -21,10 +21,13 @@ export default {
     routePath (path) {
       if(path === 'Home') {
         this.$store.commit('setPath', 'Home')
+        this.$vuetify.goTo(0)
       } else if(path === 'Dynamic') {
         this.$store.commit('setPath', 'Dynamic Rendering')
+        this.$vuetify.goTo(0)
       } else if (path === 'Structure'){
         this.$store.commit('setPath', 'File Structure')
+        this.$vuetify.goTo(0)
       }
     }
   },
