@@ -4,7 +4,7 @@
       <v-flex d-flex xs12>
         <v-card class="bgc">
           <v-card-title class="display-1">
-            What are Javascript Frameworks?
+            {{ introMessage }}
           </v-card-title>
           <v-divider />
           <v-card-text class="subheading">
@@ -46,6 +46,11 @@
 import StepperChart from './StepperChart'
 export default {
   name: 'Home',
+  data () {
+    return {
+      introMessage: 'What are Javascript Frameworks?'
+    }
+  },
   components: {
     StepperChart
   }

@@ -49,7 +49,7 @@
         <code class="coder">
           &lt;template&gt;
           <span class="greener">< !-- the power of Vue Compels You! -- > </span>
-            &lt;div v-for="(member, index) in bandMembers" :key="index"&gt;
+            &lt;div <span class="bluer">v-for="(member, index) in bandMembers" :key="index"</span>&gt;
               &lt;v-img :src="<span class="blackr">member.img</span>" /&gt;
                 &lt;div class="grid-stuff"&gt;
                   <span class="blackr">{ member.name }</span>
@@ -62,8 +62,7 @@
         </code>
       </v-card-text>
     </v-card>
-
-    <p class="ml-3 pt-3 headline"> Lets see it in action!</p> 
+    <p class="ml-3 pt-3 headline"> Lets see Vue's DOM rendering in action!</p>
     <!-- Toggle Dynamic Rendering -->
     <v-btn @click="clicky = !clicky" class="ml-5 mb-3" color="primary">Render!</v-btn>
 
@@ -95,7 +94,10 @@ export default {
         // { icon: 'euro_symbol', title: 'Funny Money', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'code', title: 'Code it out', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'compare_arrows', title: 'Comparison', info: 'Lorem ipsum dolor sit amet, consectetur' },
-        // { icon: 'eject', title: 'Eject Disk', info: 'Lorem ipsum dolor sit amet, consectetur' }
+        // { icon: 'eject', title: 'Eject Disk', info: 'Lorem ipsum dolor sit amet, consectetur' },
+        // { icon: 'android', title: 'Android Phone', info: 'Lorem ipsum dolor sit amet, consectetur' },
+        // { icon: 'accessibility', title: 'Person', info: 'Lorem ipsum dolor sit amet, consectetur' },
+        // { icon: 'account_box', title: 'Account Management', info: 'Lorem ipsum dolor sit amet, consectetur' }
       ]
     }
   }

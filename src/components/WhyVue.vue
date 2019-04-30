@@ -33,6 +33,16 @@
                   Allows for dynamic data rendering, cutting duplicate code.
                 </v-list-tile-title>
               </v-list-tile>
+              <v-list-tile>
+                <v-list-tile-title>
+                  Can be loaded as a resource of in a HTML page; allowing you to easily use Vue without any installation process.
+                </v-list-tile-title>
+              </v-list-tile>
+              <v-list-tile>
+                <v-list-tile-title>
+                  Reactivity, can automatically update the DOM when changes are made.
+                </v-list-tile-title>
+              </v-list-tile>
             </v-list>
             <!-- <v-btn color="primary" @click="newPath">EXAMPLES</v-btn> -->
           </v-card-text>
@@ -44,7 +54,7 @@
 
 <script>
 export default {
-  name: "WhyVue",
+  name: 'WhyVue',
   methods: {
     newPath () {
       this.$store.commit('setPath', 'Examples')
