@@ -8,16 +8,18 @@
           </v-card-title>
           <v-divider />
           <v-card-text class="subheading">
-            Vue.js is optimized for progessive integration, meaning you can create a single vue file and drop it into 
-            a major site as a standalone page / feature,
-            or create an entirely new site with just vue. it's flexibility is what makes it really shine.
-            Along with this, Vue boasts a certain ease of use that many Frameworks lack, 
-            unlike React, you don't have to understand JSX or any other preprocessors.
-            You simple need to know HTML, Javascript, and CSS.
-            Though i would recommend a medium level understanding of Javascript as it is a Javascript based framework.
-            Some of Vue's best attribues:
-            
             <v-list class="bgc">
+              <v-list-tile>
+                <v-list-tile-title>
+                  Vue.js is optimized for progessive integration, meaning you can create a single vue file and drop it into 
+                  a major site as a standalone page / feature
+                </v-list-tile-title>
+              </v-list-tile>
+              <v-list-tile>
+                <v-list-tile-title>
+                  Can also be used to create extremely complex, full scale web sites.
+                </v-list-tile-title>
+              </v-list-tile>
               <v-list-tile>
                 <v-list-tile-title>
                   Add's structure and utilties, which allows what was a small project grow into a large, dynamic site with ease.

@@ -62,17 +62,69 @@
         </code>
       </v-card-text>
     </v-card>
-    <p class="ml-3 pt-3 headline"> Lets see Vue's DOM rendering in action!</p>
+    <p class="ml-3 pt-3 headline"> Lets see Vue's Dynamic DOM rendering in action!</p>
+    
+    <v-form>
+      <v-container>
+        <v-layout>
+          <v-flex>
+            <v-combobox
+              v-model="select"
+              :items="items"
+              :prepend-inner-icon="select"
+              label="Select an Icon"
+            ></v-combobox>      
+          </v-flex>
+          <v-flex>
+            <v-text-field
+              v-model="title"
+              label="Title"
+            ></v-text-field>
+          </v-flex>
+          <v-flex>
+            <v-text-field
+              v-model="info"
+              label="Info"
+            ></v-text-field>
+          </v-flex>
+        </v-layout>  
+      </v-container>
+      
+      <v-btn
+        color="primary"
+        @click="addToListItems">
+        Add to Dom
+      </v-btn>
+      
+        <!-- class="ml-5 mb-3" -->
+      <v-btn
+        @click="clicky = !clicky"
+        color="primary">
+        Render!
+      </v-btn>  
+      
+    </v-form>
     <!-- Toggle Dynamic Rendering -->
-    <v-btn @click="clicky = !clicky" class="ml-5 mb-3" color="primary">Render!</v-btn>
+     <v-alert
+      :value="alertBox"
+      type="error"
+    >
+      You must select an Icon and a Title
+    </v-alert>
+
 
     <!-- BEGIN Dynamic Rendering -->
     <transition-group name="animate">
+      <!-- For loop over ListItems array -->
     <v-card class="animate" v-show="clicky" v-for="(item, index) in listItems" :key="index">
+      <!-- insert Title -->
       <v-card-title :key="item.title">{{ item.title }}</v-card-title>
+      <!-- insert Icon -->
       <v-icon :key="item.icon" class="ml-5" color="primary">{{ item.icon }}</v-icon>
+      <!-- insert Info -->
       <v-card-text :key="item.info">{{ item.info }}</v-card-text>
     </v-card>
+
     </transition-group>
     <!-- END Dynamic Rendering  -->
 
@@ -84,11 +136,18 @@ export default {
   name: 'VueBenefits',
   data () {
     return {
+      alertBox: false,
+      info: null,
+      title: null,
+      select: null,
+      items: [
+        'euro_symbol', 'code', 'compare_arrows', 'eject', 'accessibility', 'account_box', 'attach_money'
+      ],
       clicky: false,
       listItems: [
         { icon: 'android', title: 'Android Phone', info: 'Lorem ipsum dolor sit amet, consectetur' },
-        { icon: 'accessibility', title: 'Person', info: 'Lorem ipsum dolor sit amet, consectetur' },
-        { icon: 'account_box', title: 'Account Management', info: 'Lorem ipsum dolor sit amet, consectetur' },
+        // { icon: 'accessibility', title: 'Person', info: 'Lorem ipsum dolor sit amet, consectetur' },
+        // { icon: 'account_box', title: 'Account Management', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'build', title: 'Fix it', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'attach_money', title: 'Money', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'euro_symbol', title: 'Funny Money', info: 'Lorem ipsum dolor sit amet, consectetur' },
@@ -99,6 +158,17 @@ export default {
         // { icon: 'accessibility', title: 'Person', info: 'Lorem ipsum dolor sit amet, consectetur' },
         // { icon: 'account_box', title: 'Account Management', info: 'Lorem ipsum dolor sit amet, consectetur' }
       ]
+    }
+  },
+  methods: {
+    addToListItems () {
+      if (this.select === null && this.title === null) {
+        this.alertBox = true
+      } else {
+        this.alertBox = false
+        let newItem = { icon: this.select, title: this.title, info: this.info }
+        this.listItems.splice(0, 0, newItem)
+      }
     }
   }
 }
